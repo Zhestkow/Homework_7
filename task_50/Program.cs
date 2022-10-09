@@ -23,17 +23,11 @@ if (NumIdx[0] > matrix.GetLength(0) || NumIdx[1] > matrix.GetLength(1))
 {
     WriteLine("Такого элемента нет!!!");
 }
-for (int i = 0; i < matrix.GetLength(0); i++)
+else 
 {
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        if (i == NumIdx[0] && j == NumIdx[1])
-        {
-            Write($"{matrix[i, j]}");
-
-        }
-    }
+     Write($"{matrix[NumIdx[0],NumIdx[1]]}");
 }
+
 
 
 
