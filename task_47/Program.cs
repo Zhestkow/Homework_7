@@ -11,29 +11,36 @@
 
 using static System.Console;
 Clear();
-Write("Ввдеите количество строк, столбцов, минимальное и максимальное значение через пробел: ");
+Write("Ввдеите количество строк, столбцов через пробел: ");
 int[] parameters = GetArrayFromString(ReadLine()!);
-int[,] matrix = GetMatrixArray(parameters[0], parameters[1], parameters[2], parameters[3]);
+double[,] matrix = GetMatrixArray(parameters[0], parameters[1]);
 PrintMatrix(matrix);
 
 
 
 
-int[,] GetMatrixArray(int rows, int coloms, int minValue, int maxValue)
+
+
+
+
+
+
+
+double[,] GetMatrixArray(int rows, int coloms)
 {
-    int[,] MatrixArray = new int[rows, coloms];
+    double[,] MatrixArray = new double[rows, coloms];
     for (int i = 0; i < MatrixArray.GetLength(0); i++)
     {
         for (int j = 0; j < MatrixArray.GetLength(1); j++)
         {
-            MatrixArray[i, j] = new Random().Next(minValue, maxValue);
+            MatrixArray[i, j] = Convert.ToDouble(new Random().Next(-100,100));
         }
     }
     return MatrixArray;
 }
 
 
-void PrintMatrix(int[,] inMatrix)
+void PrintMatrix(double[,] inMatrix)
 {
     for (int i = 0; i < inMatrix.GetLength(0); i++)
     {
